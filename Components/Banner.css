@@ -1,0 +1,5 @@
+.banner{
+    background-color: var(--primary-color);
+    width: fit-content;
+    padding: 1rem;
+}

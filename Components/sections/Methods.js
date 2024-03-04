@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import React from 'react'
-
+import './Methods.css'
 export default function Methods() {
   return (
     <section>
-        <p className='text-sm p-4 notice'> <span className='font-bold'>Payment Mothod:</span>Concerning our payment methods, visit our <Link href='/payment-methods' className='underline'>payment page.</Link></p>
+        <p className='method notice'> <span className='payment-font'>Payment Method:</span>Concerning our payment methods, visit our <Link href='/payment-methods' className='underline-text'>payment page.</Link></p>
     </section>
   )
 }

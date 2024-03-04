@@ -67,7 +67,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../btc.png" className="scan" alt="Bitcoin Logo" />
+                      <img src="../../btc.png" className="scan" alt="Bitcoin Logo" />
                     </div>
                   )}
 
@@ -82,7 +82,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../usdtTRC20.png" className="scan" alt="USDT TRC20 Logo" />
+                      <img src="../../usdtTRC20.png" className="scan" alt="USDT TRC20 Logo" />
                     </div>
                   )}
 
@@ -97,7 +97,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../usdtERC20.png" className="scan" alt="USDT ERC20 Logo" />
+                      <img src="../../usdtERC20.png" className="scan" alt="USDT ERC20 Logo" />
                     </div>
                   )}
 
@@ -112,7 +112,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../Eth.png" className="scan" alt="ETH Logo" />
+                      <img src="../../Eth.png" className="scan" alt="ETH Logo" />
                     </div>
                   )}
                 </div>
