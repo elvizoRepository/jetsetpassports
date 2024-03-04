@@ -1,0 +1,5 @@
+.custom-btn{
+    padding: 0.5rem 1rem;
+    background-color: var(--call-to-action);
+    color: var(--primary-color);
+}
