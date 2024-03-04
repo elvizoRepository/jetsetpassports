@@ -1,0 +1,32 @@
+
+.testimonial-section{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    align-items: center;
+    color: var(--primary-color);
+}
+.testimonial-left,.testimonial-right{
+    width: 50%;
+}
+.testimonial-intro{
+    margin-top: 1rem;
+    font-size: medium;
+
+}
+@media (max-width:768px) {
+    .testimonial-section{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .testimonial-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .testimonial-left,.testimonial-right{
+        width: 100%;
+        
+    }
+}

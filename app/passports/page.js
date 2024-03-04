@@ -4,6 +4,7 @@ import Banner from '@/Components/Banner';
 import passports from '@/data/passports';
 import CartItem from '@/Components/CartItems';
 import Methods from '@/Components/sections/Methods';
+import './passportspage.css'
 
 export default function Page() {
   const [sortingOrder, setSortingOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
@@ -31,14 +32,14 @@ export default function Page() {
       <Banner title='Choose Your Dream Passport' />
       <Methods/>
       <section>
-        <div className="mb-4 flex justify-between items-center text-sm ">
+        <div className="filters">
           <div>
             <label>
               Sort by Price:
               <select
                 value={sortingOrder}
                 onChange={(e) => setSortingOrder(e.target.value)}
-                className='bg-gray-200 rounded-md px-2 py-1'
+                className='select-class'
               >
                 <option value="asc">Lowest to Highest</option>
                 <option value="desc">Highest to Lowest</option>
@@ -52,14 +53,14 @@ export default function Page() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className='bg-gray-200 text-black ml-1 rounded-md px-2 py-1'
+                className='search-class'
               />
             </label>
           </div>
         </div>
 
         {/* Display Passports */}
-        <div className="grid grid-cols-4 gap-4 p-10">
+        <div className="grid-layout">
           {filteredPassports.map((passport, index) => (
             <CartItem
               key={index}

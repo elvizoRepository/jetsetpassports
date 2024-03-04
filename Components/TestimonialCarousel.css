@@ -60,3 +60,8 @@
     background-color: var(--call-to-action);
   }
   
+  @media (max-width:768px) {
+    .testimonial-carousel {
+      width: 100%;
+    }
+  }

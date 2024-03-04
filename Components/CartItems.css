@@ -1,0 +1,40 @@
+.cart-container{
+    background-color: var(--call-to-action);
+    color: var(--primary-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    width: 280px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.cart-container:hover{
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.cart-image-container{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+.cart-image-container-img{
+    width: 100%;
+}
+.cart-bottom{
+    padding: 1.5rem;
+}
+.passport-name{
+    font-weight: bold;
+}
+.processing-fee{
+    font-size: small;
+    margin-bottom: 0.8rem;
+}
+
+@media (max-width:376px) {
+    .cart-container{
+        width: 100%;
+    }
+}

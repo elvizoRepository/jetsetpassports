@@ -1,0 +1,60 @@
+
+.payment-page-container{
+    display: flex;
+    gap: 1rem;
+}
+.passport-payment-page-image{
+    width: 280px;
+    height: 280px;
+    border: 1px solid lightgray;
+}
+
+.payment-page-box{
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: small;
+    box-shadow: 0 1px 5px rgb(0, 0, 0,0.3);
+}
+.label-select-payment-method{
+    margin-top: 0.5rem;
+}
+.select-payment-method{
+    border: 1px solid lightgray;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+}
+.payment-box{
+    background-color: var(--call-to-action);
+    color: var(--primary-color);
+    padding: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+.coin-adress{
+    font-weight: bold;
+} 
+.copy-icon{
+    font-size: large;
+    cursor: pointer;
+} 
+.scan{
+    margin-top: 1rem;
+}
+
+@media (max-width:700px) {
+    .payment-page-container{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width:375px) {
+    .passport-payment-page-image{
+        width: 250px;
+        height: 250px;
+    }
+    .payment-page-box{
+        display: flex;
+        flex-direction: column;
+    }
+}

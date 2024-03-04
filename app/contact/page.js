@@ -11,8 +11,8 @@ export default function page() {
         <Banner title='Contact Us'/>
         <section>
             <div>
-                <p className='flex'>For inquiries and more information, feel free to give us a call on <span className='flex items-center text-green-500'><FaPhone/>+1 123 4545 45454</span></p>
-                <p className='flex'>Email Us <span className='flex items-center text-green-500'><MdEmail/>jetsetpassports@gmail.com</span></p>
+                <p>For inquiries and more information, feel free to give us a call on +1(123)4545 45454</p>
+                <p>Email Us jetsetpassports@gmail.com</p>
             </div>
         </section>
     </div>

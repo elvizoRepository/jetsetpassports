@@ -1,0 +1,25 @@
+.logo{
+    background-color: var(--secondary-color);
+    padding: 10px;
+    color: var(--primary-color);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .jetset{
+    font-weight: bold;
+  }
+
+  .passport{
+    display: flex;
+    align-items: center;
+    background-color: var(--call-to-action);
+    padding-left: 5px;
+  } 
+
+  @media (max-width:320px) {
+    .passport{
+        font-size: medium;
+    }
+  }

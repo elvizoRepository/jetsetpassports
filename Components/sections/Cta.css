@@ -1,0 +1,41 @@
+.cta-notice{
+    font-size: medium;
+}
+.note{
+    font-weight: bold;
+}
+
+.procedure{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    gap: 1rem;
+    font-size: small;
+}
+.procedure-box{
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    width: 400px;
+    border-radius:10px;
+    padding: 0.5rem;
+}
+.procedure-box:hover{
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+
+}
+@media (max-width:768px) {
+    .procedure{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cta-section{
+        text-align: center;
+    }
+    .procedure-box{
+        width: 100%;
+    }
+}

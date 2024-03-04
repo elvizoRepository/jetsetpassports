@@ -7,6 +7,7 @@ import Testimonial from '@/Components/sections/Testimonial';
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { saveAs } from 'file-saver';
+import '../paymentpage.css' 
 
 export default function Page({ params }) {
   const [selectedCurrency, setSelectedCurrency] = useState('btc');
@@ -22,7 +23,6 @@ export default function Page({ params }) {
     setSelectedCurrency(event.target.value);
   };
     const selectedItem = passports.find(item => item.id === Number(params.id));
-    console.log(selectedItem);
     // Check if the item is found
     if (!selectedItem) {
       return <div>Item not found</div>;
@@ -39,15 +39,15 @@ export default function Page({ params }) {
       <div>
         <Banner title={selectedItem.country} />
         <Installments/>
-        <section className='flex gap-4'>
+        <section className='payment-page-container '>
           <div>
-              <img src={`.${selectedItem.imageurl}`} alt={`Image of ${selectedItem.country}`} className='w-[280px] h-[280px] border'/>
+              <img src={`.${selectedItem.imageurl}`} alt={`Image of ${selectedItem.country}`} className='passport-payment-page-image'/>
               <p className='text-green-500 font-bold'>Passport Processing Fee: {selectedItem.price}$</p> 
           </div>
           
-          <div class="border border-gray-100 rounded-md p-4 text-sm shadow-md">
-              <label for="currencySelect" className=" mb-2">Select Payment Method:</label>
-                <select id="currencySelect" className="border mb-4 ml-2" onChange={handleCurrencyChange} value={selectedCurrency}>
+          <div className="payment-page-box">
+              <label htmlFor="currencySelect" className=" label-select-payment-method">Select Payment Method:</label>
+                <select id="currencySelect" className="select-payment-method" onChange={handleCurrencyChange} value={selectedCurrency}>
                   <option value="btc">BTC</option>
                   <option value="usdtTRC20">USDT(TRC20)</option>
                   <option value="usdtERC20">USDT(ERC20)</option>
@@ -56,63 +56,63 @@ export default function Page({ params }) {
 
                 <div id={`${selectedCurrency}Div`}>
                   {selectedCurrency === 'btc' && (
-                    <div className="mb-2 payment-box p-2">
+                    <div className="payment-box">
                       <p>
-                        <span className="font-bold">Bitcoin(BTC) Address:</span>{' '}
+                        <span className="coin-adress">Bitcoin(BTC) Address:</span>{' '}
                         16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm
                         <CopyToClipboard text="16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm" onCopy={handleCopy}>
-                          <span className="copy-icon" title="Copy to Clipboard">
-                            <FaCopy className='text-lg cursor-pointer'/>
+                          <span  title="Copy to Clipboard">
+                            <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../btc.png" className="mt-4" alt="Bitcoin Logo" />
+                      <img src="../btc.png" className="scan" alt="Bitcoin Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'usdtTRC20' && (
-                    <div className="mb-2 payment-box p-2">
+                    <div className="payment-box">
                       <p>
-                        <span className="font-bold">USDT(TRC20) Address:</span> TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM
+                        <span className="coin-adress">USDT(TRC20) Address:</span> TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM
                         <CopyToClipboard text="TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM" onCopy={handleCopy}>
-                          <span className="copy-icon" title="Copy to Clipboard">
-                            <FaCopy className='text-lg cursor-pointer'/>
+                          <span  title="Copy to Clipboard">
+                            <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../usdtTRC20.png" className="mt-4" alt="USDT TRC20 Logo" />
+                      <img src="../usdtTRC20.png" className="scan" alt="USDT TRC20 Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'usdtERC20' && (
-                    <div className="mb-2 payment-box p-2">
+                    <div className="payment-box">
                       <p>
-                        <span className="font-bold">USDT(ERC20) Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
+                        <span className="coin-adress">USDT(ERC20) Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
                         <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
-                          <span className="copy-icon" title="Copy to Clipboard">
-                            <FaCopy className='text-lg cursor-pointer'/>
+                          <span title="Copy to Clipboard">
+                            <FaCopy className="copy-icon" />
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../usdtERC20.png" className="mt-4" alt="USDT ERC20 Logo" />
+                      <img src="../usdtERC20.png" className="scan" alt="USDT ERC20 Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'eth' && (
-                    <div className="mb-2 payment-box p-2">
+                    <div className="payment-box">
                       <p>
-                        <span className="font-bold">ETH Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
+                        <span className="coin-adress">ETH Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
                         <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
-                          <span className="copy-icon" title="Copy to Clipboard">
-                            <FaCopy className='text-lg cursor-pointer'/>
+                          <span  title="Copy to Clipboard">
+                            <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../Eth.png" className="mt-4" alt="ETH Logo" />
+                      <img src="../Eth.png" className="scan" alt="ETH Logo" />
                     </div>
                   )}
                 </div>

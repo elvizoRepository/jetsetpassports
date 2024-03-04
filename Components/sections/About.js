@@ -1,11 +1,12 @@
 "use client"
 import React from 'react'
 import TestimonialCarousel from '../TestimonialCarousel'
+import './About.css'
 
 function About() {
   return (
     <section>
-      <p className='text-sm'>At Jetset Passports expertise meets the undercover world of global travel. 
+      <p className='about-text'>At Jetset Passports expertise meets the undercover world of global travel. 
         With over ten years of keeping things hush-hush, we&apos;re the go-to team for top-notch passport services worldwide. 
         Picture us as the silent leaders, making sure your international passport needs are met with the utmost discretion.
         Our dedication isn&apos;t just about service; it&apos;s a secret mission that ensures your journey to getting your passport is smooth, secure, 
