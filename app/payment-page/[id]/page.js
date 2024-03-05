@@ -54,11 +54,11 @@ export default function Page({ params }) {
                   <option value="eth">ETH</option>
                 </select>
 
-                <div id={`${selectedCurrency}Div`}>
+                <div id={`${selectedCurrency}`}>
                   {selectedCurrency === 'btc' && (
                     <div className="payment-box">
-                      <p>
-                        <span className="coin-adress">Bitcoin(BTC) Address:</span>{' '}
+                      <p className='textwidth'>
+                        <span className="coin-adress">Bitcoin(BTC) Address:</span>
                         16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm
                         <CopyToClipboard text="16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm" onCopy={handleCopy}>
                           <span  title="Copy to Clipboard">
@@ -67,7 +67,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../../../../btc.png" className="scan" alt="Bitcoin Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/btc_vqe2iv.png" className="scan" alt="Bitcoin Logo" />
                     </div>
                   )}
 
@@ -82,7 +82,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../../../../usdtTRC20.png" className="scan" alt="USDT TRC20 Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtTRC20_py2eew.png" className="scan" alt="USDT TRC20 Logo" />
                     </div>
                   )}
 
@@ -97,7 +97,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../../../../usdtERC20.png" className="scan" alt="USDT ERC20 Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtERC20_b9doad.png" className="scan" alt="USDT ERC20 Logo" />
                     </div>
                   )}
 
@@ -112,7 +112,7 @@ export default function Page({ params }) {
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="../../../../Eth.png" className="scan" alt="ETH Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/Eth_p3yqec.png" className="scan" alt="ETH Logo" />
                     </div>
                   )}
                 </div>

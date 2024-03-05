@@ -27,3 +27,11 @@
     align-items: center;
     gap: 10px;
 }
+
+@media (max-width:425px) {
+    .footer-left-right-links,.footer-nav{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

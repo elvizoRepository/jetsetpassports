@@ -12,7 +12,7 @@
 .payment-page-box{
     border: 1px solid lightgray;
     border-radius: 6px;
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: small;
     box-shadow: 0 1px 5px rgb(0, 0, 0,0.3);
 }
@@ -27,7 +27,7 @@
 .payment-box{
     background-color: var(--call-to-action);
     color: var(--primary-color);
-    padding: 1.5rem;
+    padding: 1rem;
     margin-bottom: 0.5rem;
   }
 .coin-adress{
@@ -56,5 +56,11 @@
     .payment-page-box{
         display: flex;
         flex-direction: column;
+        width: 100%; /* Ensure the box takes the full width */
+    }
+    .textwidth{
+        overflow: scroll;
+        background-color: var(--secondary-color);
+        padding: 0.5rem;
     }
 }
