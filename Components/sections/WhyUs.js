@@ -15,6 +15,7 @@ function WhyUs() {
                 <h3><CountUp end={10} duration={5} className='font-bold '/>+ Years Experience</h3>
                 <h3><CountUp end={100} duration={5} className='font-bold'/>% Security Measures</h3>
                 <h3><CountUp end={100} duration={5} className='font-bold'/>% Efficiency Processing</h3>
+                <h3><CountUp end={100} duration={5} className='font-bold'/>% Money-Back Guarantee</h3>
             </div>
             <div className='why-us-container-right'>
                 <h3 className='why-us-container-right-text'>Dive into the intricacies of our passport services, where precision meets personalization. 

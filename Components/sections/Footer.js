@@ -14,6 +14,7 @@ export default function Footer() {
                     <Link href='/contact'>Contact</Link>
                     <Link href='/payment-methods'>Payment Methods</Link>
                     <Link href='/tracking'>Track Progress</Link>
+                    <Link href='/policy'>Privacy & Policy</Link>
                 </nav>
             </div>
 

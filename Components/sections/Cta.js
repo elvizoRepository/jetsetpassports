@@ -25,12 +25,11 @@ function Cta() {
             </div>
             <div className='procedure-box'>
                 <RiCoinsFill className='icons-cta'/>
-                 <p>Make payment using the <Link href='/payment-methods' className='underline-text'>available payment methods</Link></p>
+                 <p>Upon selection click on the apply button, fill the necesary information and pay the processing fee.<Link href='/payment-methods' className='underline-text'>For information on payment methods visit</Link></p>
             </div>
             <div className='procedure-box'>
                 <FaFileDownload className='icons-cta'/>
-                 <p>After Payment method a form will be sent to your email.Download the Form, Fill and attatch a 2x2 inches passport photo
-                    then submit to <Link href='mailto:jetsetpassports@gmail.com' className='underline-text'>jetsetpassports@gmail.com</Link></p>
+                <p>Upon successful payment, download the generated PDF file, sign it, and follow the subsequent instructions outlined in the document.</p>
             </div>
         </div>
     </section>

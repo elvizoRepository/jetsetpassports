@@ -10,7 +10,7 @@ export default function Installments() {
             towards meeting your requirements. The remaining balance will be expected upon completion or 
             as per the agreed-upon installment plan. Please be aware that services may not proceed until 
             the initial 50% payment is received. For any inquiries or to discuss a personalized installment 
-            plan, kindly <Link href='/contact' className='underline-text'>contact our support team for assistance.</Link></p>
+            plan, kindly <Link href='/contact' className='underline-text' target='_blank'>contact our support team for assistance.</Link></p>
     </section>
   )
 }

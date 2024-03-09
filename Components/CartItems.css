@@ -1,40 +1,75 @@
-.cart-container{
+.cart-container {
     background-color: var(--call-to-action);
     color: var(--primary-color);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-
     width: 280px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
-.cart-container:hover{
+  }
+  
+  .cart-container.unavailable {
+    background-color: lightgray; /* Light gray background for not available items */
+  }
+  
+  .cart-container:hover {
     box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
-}
-.cart-image-container{
+  }
+  
+  .cart-image-container {
     width: 280px;
     height: 280px;
     overflow: hidden;
-}
-.cart-image-container-img{
+  }
+  
+  .cart-image-container-img {
     width: 100%;
-}
-.cart-bottom{
+  }
+  
+  .cart-bottom {
     padding: 1.5rem;
-}
-.passport-name{
+  }
+  
+  .cart-bottom.unavailable {
+    background-color: lightgray; /* Light gray background for not available items */
+  }
+  
+  .cart-bottom.grayscale {
+    filter: grayscale(100%); /* Grayscale the cart-bottom for not available items */
+  }
+  
+  .passport-name {
     font-weight: bold;
-}
-.processing-fee{
+  }
+  
+  .passport-availability {
+    font-weight: bold;
+  }
+  
+  .processing-fee {
     font-size: small;
     margin-bottom: 0.8rem;
-}
+  }
+  
+  .explore {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .explore:hover {
+    text-decoration: underline;
+  }
+  
+  .unavailable-text {
+    color: darkgray; /* Color for not available text */
+  }
 
-@media (max-width:376px) {
-    .cart-container{
-        width: 100%;
+  @media (max-width: 376px) {
+    .cart-container {
+      width: 100%;
     }
-}
+  }
+  

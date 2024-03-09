@@ -4,7 +4,7 @@ import './Methods.css'
 export default function Methods() {
   return (
     <section>
-        <p className='method notice'> <span className='payment-font'>Payment Method:</span>Concerning our payment methods, visit our <Link href='/payment-methods' className='underline-text'>payment page.</Link></p>
+        <p className='method notice'> <span className='payment-font'>Payment Method:</span>Concerning our payment methods, visit our <Link target='_blank' href='/payment-methods' className='underline-text'>payment page.</Link></p>
     </section>
   )
 }

@@ -4,6 +4,7 @@ import passports from '@/data/passports';
 import Installments from '@/Components/sections/Installments';
 import React,{ useState } from 'react';
 import Testimonial from '@/Components/sections/Testimonial';
+import Link from 'next/link';
 import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { saveAs } from 'file-saver';
@@ -39,85 +40,13 @@ export default function Page({ params }) {
       <div>
         <Banner title={selectedItem.country} />
         <Installments/>
-        <section className='payment-page-container '>
-          <div>
+        <section className='payment-page-container'>
               <img src={`.${selectedItem.imageurl}`} alt={`Image of ${selectedItem.country}`} className='passport-payment-page-image'/>
+              <p className='country-pass-name'>{selectedItem.country}</p>
+              <p className='visa-free-info'>For infomation about {selectedItem.country} and list of visa-free countries visit <Link className='underline-text' target='_blank' rel='noopener noreferrer' href={selectedItem.link}>visaindex.com</Link></p>
               <p className='text-green-500 font-bold'>Passport Processing Fee: {selectedItem.price}$</p> 
-          </div>
-          
-          <div className="payment-page-box">
-              <label htmlFor="currencySelect" className=" label-select-payment-method">Select Payment Method:</label>
-                <select id="currencySelect" className="select-payment-method" onChange={handleCurrencyChange} value={selectedCurrency}>
-                  <option value="btc">BTC</option>
-                  <option value="usdtTRC20">USDT(TRC20)</option>
-                  <option value="usdtERC20">USDT(ERC20)</option>
-                  <option value="eth">ETH</option>
-                </select>
-
-                <div id={`${selectedCurrency}`}>
-                  {selectedCurrency === 'btc' && (
-                    <div className="payment-box">
-                      <p className='textwidth'>
-                        <span className="coin-adress">Bitcoin(BTC) Address:</span>
-                        16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm
-                        <CopyToClipboard text="16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm" onCopy={handleCopy}>
-                          <span  title="Copy to Clipboard">
-                            <FaCopy className="copy-icon"/>
-                          </span>
-                        </CopyToClipboard>
-                      </p>
-                      {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/btc_vqe2iv.png" className="scan" alt="Bitcoin Logo" />
-                    </div>
-                  )}
-
-                  {selectedCurrency === 'usdtTRC20' && (
-                    <div className="payment-box">
-                      <p>
-                        <span className="coin-adress">USDT(TRC20) Address:</span> TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM
-                        <CopyToClipboard text="TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM" onCopy={handleCopy}>
-                          <span  title="Copy to Clipboard">
-                            <FaCopy className="copy-icon"/>
-                          </span>
-                        </CopyToClipboard>
-                      </p>
-                      {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtTRC20_py2eew.png" className="scan" alt="USDT TRC20 Logo" />
-                    </div>
-                  )}
-
-                  {selectedCurrency === 'usdtERC20' && (
-                    <div className="payment-box">
-                      <p>
-                        <span className="coin-adress">USDT(ERC20) Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
-                        <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
-                          <span title="Copy to Clipboard">
-                            <FaCopy className="copy-icon" />
-                          </span>
-                        </CopyToClipboard>
-                      </p>
-                      {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtERC20_b9doad.png" className="scan" alt="USDT ERC20 Logo" />
-                    </div>
-                  )}
-
-                  {selectedCurrency === 'eth' && (
-                    <div className="payment-box">
-                      <p>
-                        <span className="coin-adress">ETH Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
-                        <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
-                          <span  title="Copy to Clipboard">
-                            <FaCopy className="copy-icon"/>
-                          </span>
-                        </CopyToClipboard>
-                      </p>
-                      {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/Eth_p3yqec.png" className="scan" alt="ETH Logo" />
-                    </div>
-                  )}
-                </div>
-                <p>After Payment has been processed <button className='border bg-gray-300 p-[2px]' onClick={handleDownload}>download form</button> and send to jetsetpassports@gmail.com</p>
-          </div>
+              <p className='processing-time'>Processing Time : {selectedItem.pocessingTime} Months</p>
+              <Link href={`/apply-now/${selectedItem.id}`} className='apply-button'>Apply Now</Link>
         </section>
         <Testimonial/>
 

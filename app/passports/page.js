@@ -68,6 +68,7 @@ export default function Page() {
               passportName={passport.country}
               fees={passport.price}
               id = {passport.id}
+              availabillty={passport.availability}
             />
           ))}
         </div>
