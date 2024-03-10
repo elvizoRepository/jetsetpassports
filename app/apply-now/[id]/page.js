@@ -12,6 +12,7 @@ import Installments from '@/Components/sections/Installments';
 import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import Modal from '@/Components/ModalComponent';
+import { Helmet } from 'react-helmet';
 
 export default function Page({params}) {
     const [preferedPrice, setPreferedPrice] = useState(null);
@@ -21,10 +22,14 @@ export default function Page({params}) {
     const selectedPrice = selectedItem.price;
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
+    const [motherName, setMotherName] = useState('');
+    const [fatherName, setFatherName] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
     const [photo, setPhoto] = useState(null);
     const [imagePreview, setImagePreview] = useState(null);
+    const [phone, setPhoneNumber] = useState('');
+    const [emergencyPhone, setemergencyPhone] = useState('');
     const [country, setCountry] = useState('');
     const [aDress, setAddress] = useState('');
     const [postalCode, setpostalCode] = useState('');
@@ -54,11 +59,24 @@ export default function Page({params}) {
     const handleLastNameChange = (e) => {
       setLastName(e.target.value);
     }; 
+    const handleMotherNameChange = (e) => {
+      setMotherName(e.target.value);
+    };
+
+    const handleFatherNameChange = (e) => {
+      setFatherName(e.target.value);
+    }; 
     const handleEmailChange = (e) =>{
       setEmail(e.target.value);
     }
     const handleBirthdayChange = (e) => {
       setBirthday(e.target.value);
+    };
+    const handlePhoneChange = (e) => {
+      setPhoneNumber(e.target.value);
+    };
+    const handleEmergencyPhoneChange = (e) => {
+      setemergencyPhone(e.target.value);
     };
     const handleBCountryChange = (e) => {
       setCountry(e.target.value);
@@ -107,7 +125,7 @@ export default function Page({params}) {
     //for payment option installment of full
     const handlePaymentOptionChange = (option) => {
       if (option === 'installment') {
-        setPreferedPrice(selectedPrice * 0.5);
+        setPreferedPrice(selectedPrice * 0.3);
       } else if (option === 'fullPayment') {
         setPreferedPrice(selectedPrice);
       }
@@ -135,11 +153,12 @@ export default function Page({params}) {
     
       pdf.text(`Application No: ${applicationNumber}`, 10, 50);
     
-      // Applicant's Name
+
       pdf.text(`Applicant's Name: ${firstName} ${lastName}`, 10, 60);
-    
-      // Birthdate and Image
-      pdf.text(`Birthdate: ${firstName}`, 10, 70);
+      pdf.text(`Father's Name: ${fatherName}`, 10, 70);
+      pdf.text(`Mother's Name: ${motherName}`, 10, 80);
+      pdf.text(`Phone Number: ${phone}`, 10, 90);
+      pdf.text(`Birthdate: ${birthday}`, 10, 100);
     
       // Assuming you have an image for the applicant's photo
       if (imagePreview) {
@@ -147,34 +166,34 @@ export default function Page({params}) {
       }
     
       // Mailing Address
-      pdf.text(`Mailing Address: ${aDress}, ${country}, ${postalCode}`, 10, 80);
+      pdf.text(`Mailing Address: ${aDress}, ${country}, ${postalCode}`, 10, 110);
     
       // Applying for a passport
-      pdf.text(`Applying for a passport: ${selectedItem.country}`, 10, 100);
+      pdf.text(`Applying for a passport: ${selectedItem.country}`, 10, 120);
     
       // Percentage fee paid
-      pdf.text(`Fee Paid: ${preferedPrice !== null ? preferedPrice : ''}$`, 10, 110);
+      pdf.text(`Fee Paid: ${preferedPrice !== null ? preferedPrice : ''}$`, 10, 130);
     
       // Transaction ID and Screenshot
-      pdf.text(`Transaction ID: ${txId}`, 10, 120);
+      pdf.text(`Transaction ID: ${txId}`, 10, 140);
     
       if (screenshotPreview) {
-        pdf.addImage(screenshotPreview, 'JPEG', 10, 130, 50, 50);
+        pdf.addImage(screenshotPreview, 'JPEG', 10, 150, 50, 50);
       }
     
       // Signing terms and conditions
-      pdf.text(`I agree to the Discretion Policy for Jetset Passport Services as stated on the website.`, 10, 190);
+      pdf.text(`I agree to the Discretion Policy for Jetset Passport Services as stated on the website.`, 10, 200);
     
       // Signing space
-      pdf.text('Applicant\'s Signature: ________________________', 10, 200);
+      pdf.text('Applicant\'s Signature: ________________________', 10, 210);
     
       // Instruction
-      pdf.text(`Please affix your signature to this document and provide fingerprints for both hands on a separate A4 paper. Additionally, \ninclude a photocopy of your birth certificate. Kindly dispatch these items to the designated address via mail.`, 10, 210);
-      pdf.text(`Yasmin, Asghar`, 10, 230);
-      pdf.text(`Street: P.O Box 50431`, 10, 235);
-      pdf.text(`State/province/area: Dubai`, 10, 240);
-      pdf.text(`Zip code: 50431`, 10, 245);
-      pdf.text(`Country: Emirates`, 10, 250);
+      pdf.text(`Please affix your signature to this document and provide fingerprints for both hands on a separate A4 paper. Additionally, \ninclude a photocopy of your birth certificate. Kindly dispatch these items to the designated address via mail.`, 10, 220);
+      pdf.text(`Yasmin, Asghar`, 10, 240);
+      pdf.text(`Street: P.O Box 50431`, 10, 245);
+      pdf.text(`State/province/area: Dubai`, 10, 250);
+      pdf.text(`Zip code: 50431`, 10, 255);
+      pdf.text(`Country: Emirates`, 10, 260);
     
       // Save the PDF or open in a new tab
 
@@ -209,7 +228,9 @@ export default function Page({params}) {
             </div>
         ) : (
           <>
-           <Modal isTrue={open}/>
+        <Helmet>
+            <title>3WEF JetSet Apllication Form Passports</title>
+        </Helmet>
         <form onSubmit={handleSubmit}>
             <h1 className='form-title'>3WEF JetSet Passport Application Form</h1>
             <div className='notice guide'>
@@ -218,7 +239,7 @@ export default function Page({params}) {
               <p>- Choose from the provided addresses and proceed with the payment</p>
               <p>- Following payment, enter the transaction ID into the designated Txid field</p>
               <p>- Submit your application</p>
-              <p>- Download the generated PDF, sign it, and mail it together with fingerprints to the address mentioned in the PDF</p>
+              <p>- Download the generated PDF, sign it,attach photocopy of birth certificate and your fingerprints.<br/> Put all documents in an envelope and mail it to the address mentioned in the PDF</p>
             </div>
             <div className='logo-bar'>
                 <Logo/>
@@ -232,6 +253,16 @@ export default function Page({params}) {
                 <div className='last-name'>
                     <label>Last Name</label>
                     <input type='text' required className='border outline-none px-1' value={lastName} onChange={handleLastNameChange}/>
+                </div>
+            </div>
+            <div className='flex_container margintop name_phone'>
+                <div className='first-name'>
+                    <label>Mother&apos;s Name</label>
+                    <input type='text' required className='border outline-none px-1 ' value={motherName} onChange={handleMotherNameChange}/>
+                </div>
+                <div className='last-name'>
+                    <label>Father&apos;s Name</label>
+                    <input type='text' required className='border outline-none px-1' value={fatherName} onChange={handleFatherNameChange}/>
                 </div>
             </div>
             <div className='first-name margintop'>
@@ -260,6 +291,14 @@ export default function Page({params}) {
 
             </div>
             <div className='margintop flex_container flex-col-mb'>
+                <label>Phone Number</label>
+                <input className='border outline-none px-1' value={phone} onChange={handlePhoneChange}/>
+            </div>
+            <div className='margintop flex_container flex-col-mb'>
+                <label>Emmergency Number</label>
+                <input className='border outline-none px-1' value={emergencyPhone} onChange={handleEmergencyPhoneChange}/>
+            </div>
+            <div className='margintop flex_container flex-col-mb'>
                 <label>Country</label>
                 <input className='border outline-none px-1' value={country} onChange={handleBCountryChange}/>
             </div>
@@ -283,11 +322,11 @@ export default function Page({params}) {
                 <input
                     type="radio"
                     value="installment"
-                    checked={preferedPrice === selectedPrice * 0.5}
+                    checked={preferedPrice === selectedPrice * 0.3}
                     onChange={() => handlePaymentOptionChange('installment')}
                     required
                 />
-                Pay in Installment (50%): {selectedPrice * 0.5}$
+                Pay in Installment (30%): {selectedPrice * 0.3}$
                 </label>
             </div>
             <div>

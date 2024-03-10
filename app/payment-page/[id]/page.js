@@ -9,6 +9,8 @@ import { FaCopy } from 'react-icons/fa';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { saveAs } from 'file-saver';
 import '../paymentpage.css' 
+import { Helmet } from 'react-helmet';
+
 
 export default function Page({ params }) {
   const [selectedCurrency, setSelectedCurrency] = useState('btc');
@@ -51,6 +53,9 @@ export default function Page({ params }) {
             </div>
         ) : (
           <>
+         <Helmet>
+            <title>Jetset Passports - Passport Details</title>
+        </Helmet>          
           <Banner title={selectedItem.country} />
           <Installments/>
           <section className='payment-page-container'>

@@ -4,6 +4,7 @@ import About from '@/Components/sections/About'
 import Banner from '@/Components/Banner'
 import Title from '@/Components/Title'
 import WhyUs from '@/Components/sections/WhyUs'
+import { Helmet } from 'react-helmet';
 
 export default function Page() {
     const [isLoading, setIsLoading] = useState(true);
@@ -29,6 +30,9 @@ export default function Page() {
             </div>
         ) : (
             <>
+            <Helmet>
+                <title>Jetset Passports - About Us</title>
+            </Helmet>
             <Banner title='Know More About Us'/>
             <About/>
             <section>

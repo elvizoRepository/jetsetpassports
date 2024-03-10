@@ -20,6 +20,9 @@ export default function Page() {
             </div>
         ) : (
           <>
+         <Helmet>
+            <title>Jetset Passports - Payment Methods</title>
+        </Helmet>
           <Banner title='Payment Methods'/>
         <section className='payment_method'>
             <p className='text-sm notification notice'>We exclusively accept payments in cryptocurrencies to ensure a secure and confidential transaction process. Embracing the future of financial technology, we welcome payments in various cryptocurrencies for a seamless and discreet experience. During payment, you will be allowed to choose a cryptocurrency of your preference for your payment. If you have any questions or need assistance, feel free to reach out to our <Link href='/contact' className='underline'>support team</Link>.</p>

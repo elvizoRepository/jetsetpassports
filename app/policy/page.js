@@ -2,6 +2,7 @@
 import Banner from '@/Components/Banner'
 import React, { useEffect, useState } from 'react'
 import './policy.css'
+import { Helmet } from 'react-helmet'
 
 function Page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,9 @@ function Page() {
             </div>
         ) : (
           <>
+         <Helmet>
+            <title>Jetset Passports - Policy</title>
+        </Helmet>           
             <Banner title='Discretion Policy for Jetset Passport Services'/>
             <section className='policy'>
                 <p>At Jetset Passport Services, we hold confidentiality and discretion as paramount values in our

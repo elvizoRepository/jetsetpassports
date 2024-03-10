@@ -5,6 +5,7 @@ import passports from '@/data/passports';
 import CartItem from '@/Components/CartItems';
 import Methods from '@/Components/sections/Methods';
 import './passportspage.css'
+import { Helmet } from 'react-helmet';
 
 export default function Page() {
   const [sortingOrder, setSortingOrder] = useState('asc'); // 'asc' for ascending, 'desc' for descending
@@ -43,7 +44,10 @@ export default function Page() {
             </div>
         ) : (
           <>
-<Banner title='Choose Your Dream Passport' />
+      <Helmet>
+            <title>Jetset Passports - Passports</title>
+      </Helmet>
+      <Banner title='Choose Your Dream Passport' />
       <Methods/>
       <section>
         <div className="filters">
