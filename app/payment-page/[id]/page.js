@@ -2,7 +2,7 @@
 import Banner from '@/Components/Banner';
 import passports from '@/data/passports';
 import Installments from '@/Components/sections/Installments';
-import React,{ useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import Testimonial from '@/Components/sections/Testimonial';
 import Link from 'next/link';
 import { FaCopy } from 'react-icons/fa';
@@ -14,6 +14,13 @@ export default function Page({ params }) {
   const [selectedCurrency, setSelectedCurrency] = useState('btc');
   const [copied, setCopied] = useState(false);
   
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
   const handleDownload = () => {
     const pdfFilePath = '../application-forms.pdf';
     saveAs(pdfFilePath, 'jetset-passport-form.pdf');
@@ -38,18 +45,26 @@ export default function Page({ params }) {
   };
     return (
       <div>
-        <Banner title={selectedItem.country} />
-        <Installments/>
-        <section className='payment-page-container'>
-              <img src={`.${selectedItem.imageurl}`} alt={`Image of ${selectedItem.country}`} className='passport-payment-page-image'/>
-              <p className='country-pass-name'>{selectedItem.country}</p>
-              <p className='visa-free-info'>For infomation about {selectedItem.country} and list of visa-free countries visit <Link className='underline-text' target='_blank' rel='noopener noreferrer' href={selectedItem.link}>visaindex.com</Link></p>
-              <p className='text-green-500 font-bold'>Passport Processing Fee: {selectedItem.price}$</p> 
-              <p className='processing-time'>Processing Time : {selectedItem.pocessingTime} Months</p>
-              <Link href={`/apply-now/${selectedItem.id}`} className='apply-button'>Apply Now</Link>
-        </section>
-        <Testimonial/>
-
+            {isLoading ? (
+            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
+            </div>
+        ) : (
+          <>
+          <Banner title={selectedItem.country} />
+          <Installments/>
+          <section className='payment-page-container'>
+                <img src={`.${selectedItem.imageurl}`} alt={`Image of ${selectedItem.country}`} className='passport-payment-page-image'/>
+                <p className='country-pass-name'>{selectedItem.country}</p>
+                <p className='visa-free-info'>For infomation about {selectedItem.country} and list of visa-free countries visit <Link className='underline-text' target='_blank' rel='noopener noreferrer' href={selectedItem.link}>visaindex.com</Link></p>
+                <p className='text-green-500 font-bold'>Passport Processing Fee: {selectedItem.price}$</p> 
+                <p className='processing-time'>Processing Time : {selectedItem.pocessingTime} Months</p>
+                <Link href={`/apply-now/${selectedItem.id}`} className='apply-button'>Apply Now</Link>
+          </section>
+          <Testimonial/>
+          </>
+        )}
+        
       </div>
     );
 }

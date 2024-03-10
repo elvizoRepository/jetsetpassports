@@ -33,6 +33,13 @@ export default function Page({params}) {
     const [screenshotPreview, setScreenshotPreview] = useState(null);
     const [open, setOpen] = useState(false);
 
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+      const timeoutId = setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+      return () => clearTimeout(timeoutId);
+    }, []);
 
     if (!selectedItem) {
       return <div>Page Undergoing Maintainance Try Again Later</div>;
@@ -195,12 +202,19 @@ export default function Page({params}) {
         });
       } catch (error) {
         console.error('Error submitting application', error);
+        setOpen(true);
       }
     };
     
   return (
     <section>
-        <Modal isTrue={open}/>
+            {isLoading ? (
+            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
+            </div>
+        ) : (
+          <>
+           <Modal isTrue={open}/>
         <form onSubmit={handleSubmit}>
             <h1 className='form-title'>3WEF JetSet Passport Application Form</h1>
             <div className='notice guide'>
@@ -397,6 +411,9 @@ export default function Page({params}) {
             <button className='submit-button' type='submit'>Submit Application</button>
         </form>
         <ToastContainer />    
+          </>
+        )}
+       
     </section>
   )
 }

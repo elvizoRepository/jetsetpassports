@@ -27,9 +27,23 @@ export default function Page() {
     setFilteredPassports(sortedResults);
   }, [searchQuery, sortingOrder]);
 
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
   return (
     <div>
-      <Banner title='Choose Your Dream Passport' />
+        {isLoading ? (
+            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
+            </div>
+        ) : (
+          <>
+<Banner title='Choose Your Dream Passport' />
       <Methods/>
       <section>
         <div className="filters">
@@ -73,6 +87,9 @@ export default function Page() {
           ))}
         </div>
       </section>
+          </>
+        )}
+      
     </div>
   );
 }

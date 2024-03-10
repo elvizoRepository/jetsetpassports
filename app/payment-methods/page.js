@@ -1,13 +1,26 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Banner from '@/Components/Banner'
 import Title from '@/Components/Title'
 import './paymentmethod.css'
 export default function Page() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, []);
   return (
     <div>
-        <Banner title='Payment Methods'/>
+          {isLoading ? (
+            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
+            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
+            </div>
+        ) : (
+          <>
+          <Banner title='Payment Methods'/>
         <section className='payment_method'>
             <p className='text-sm notification notice'>We exclusively accept payments in cryptocurrencies to ensure a secure and confidential transaction process. Embracing the future of financial technology, we welcome payments in various cryptocurrencies for a seamless and discreet experience. During payment, you will be allowed to choose a cryptocurrency of your preference for your payment. If you have any questions or need assistance, feel free to reach out to our <Link href='/contact' className='underline'>support team</Link>.</p>
             <Title title='How to Make a Payment With Cryptocurrency'/>
@@ -45,6 +58,9 @@ export default function Page() {
            </div>
            <p className='mt-5'>Congratulations! You&apos;ve successfully made a cryptocurrency payment. As you become more familiar with the process, you&apos;ll find that making crypto payments becomes second nature. Remember to stay informed about the latest developments in the cryptocurrency space to make the most of this innovative payment method.</p>
         </section>
+          </>
+        )}
+        
   
     </div>
   )
