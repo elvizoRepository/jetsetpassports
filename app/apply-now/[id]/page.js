@@ -32,23 +32,25 @@ export default function Page({params}) {
     const [screenshotPhot, setScreenShotPhoto] = useState(null);
     const [screenshotPreview, setScreenshotPreview] = useState(null);
     const [open, setOpen] = useState(false);
-
     const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
       const timeoutId = setTimeout(() => {
         setIsLoading(false);
       }, 2000);
       return () => clearTimeout(timeoutId);
+
+      
     }, []);
 
     if (!selectedItem) {
       return <div>Page Undergoing Maintainance Try Again Later</div>;
     }
-    //handle Firts Name
+
     const handleFirstNameChange = (e) => {
       setFirstName(e.target.value);
     };
-    //handle Last Name
+
     const handleLastNameChange = (e) => {
       setLastName(e.target.value);
     }; 
@@ -71,14 +73,7 @@ export default function Page({params}) {
       setTxId(e.target.value);
     };
 
-    useEffect(() => {
-      // Cleanup function to revoke the object URL when the component is unmounted
-      return () => {
-        if (imagePreview) {
-          URL.revokeObjectURL(imagePreview);
-        }
-      };
-    }, [imagePreview]);
+
 
     const handleScreenShotChange = (e) => {
       const screenshotFile = e.target.files[0];
