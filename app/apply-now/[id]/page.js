@@ -215,7 +215,7 @@ export default function page({params}) {
                 <Logo/>
                 <img src='../../barcode.png' width='10%'/>
             </div>
-            <div className='flex_container margintop'>
+            <div className='flex_container margintop name_phone'>
                 <div className='first-name'>
                     <label>First Name</label>
                     <input type='text' required className='border outline-none px-1 ' value={firstName} onChange={handleFirstNameChange}/>
@@ -225,11 +225,11 @@ export default function page({params}) {
                     <input type='text' required className='border outline-none px-1' value={lastName} onChange={handleLastNameChange}/>
                 </div>
             </div>
-            <div className='first-name margintop '>
+            <div className='first-name margintop'>
                 <label>Email</label>
                 <input className='border outline-none px-1' type='email' required value={email} onChange={handleEmailChange}/>
             </div>
-            <div className='margintop flex_container'>
+            <div className='margintop flex_container name_phone'>
                 <div className='birthday'>
                     <label>Birthday</label>
                     <input type='date' required className='border outline-none px-1 h-fit' value={birthday} onChange={handleBirthdayChange}/>
@@ -250,19 +250,19 @@ export default function page({params}) {
                 </div>
 
             </div>
-            <div className='margintop flex_container'>
+            <div className='margintop flex_container flex-col-mb'>
                 <label>Country</label>
                 <input className='border outline-none px-1' value={country} onChange={handleBCountryChange}/>
             </div>
-            <div className='margintop flex_container'>
+            <div className='margintop flex_container flex-col-mb'>
                 <label>Mailing Adress</label>
                 <input className='border outline-none px-1' value={aDress} onChange={handleAdressChange}/>
             </div>
-            <div className='margintop flex_container'>
+            <div className='margintop flex_container flex-col-mb'>
                 <label>Postal Code</label>
                 <input className='border outline-none px-1' value={postalCode} onChange={handlePostalChange}/>
             </div>
-            <div className='margintop flex_container'>
+            <div className='margintop flex_container flex-col-mb'>
                 <label>APPLYING FOR </label>
                 <p className='application-country'>{selectedItem.country}</p>
             </div>
@@ -370,7 +370,7 @@ export default function page({params}) {
           <Installments/>
 
           <p className='fontbold'>Please copy and paste the transaction id from your payment confirmation</p>
-          <div className='margintop flex_container'>
+          <div className='margintop flex_container txid_photo'>
                 <div className='birthday'>
                     <label>txid/Transaction ID</label>
                     <input type='text' required className='border outline-none px-1 h-fit' value={txId} onChange={handleTxIDChange}/>
@@ -392,7 +392,7 @@ export default function page({params}) {
 
             </div>
 
-            <p>By Submiting this application, i hereby agree to the <Link  href='/policy' className='font-bold underline-text' target='_blank'>Discretion Policy for Jetset Passport Services </Link></p>
+            <p className='margin-top'>By Submiting this application, i hereby agree to the <Link  href='/policy' className='font-bold underline-text' target='_blank'>Discretion Policy for Jetset Passport Services </Link></p>
 
             <button className='submit-button' type='submit'>Submit Application</button>
         </form>
