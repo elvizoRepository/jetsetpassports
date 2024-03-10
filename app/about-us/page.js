@@ -6,7 +6,6 @@ import WhyUs from '@/Components/sections/WhyUs'
 export default function Page() {
     const data = [
         { countries: ['France', 'Germany'], locations: 194 },
-        { countries: ['Finland', 'South Korea', 'Sweden'], locations: 193 },
         { countries: ['United Kingdom'], locations: 191 },
         { countries: ['Poland'], locations: 189 },
         { countries: ['Canada', 'United States'], locations: 188 },
