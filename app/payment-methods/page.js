@@ -4,6 +4,8 @@ import Link from 'next/link'
 import Banner from '@/Components/Banner'
 import Title from '@/Components/Title'
 import './paymentmethod.css'
+import { Helmet } from 'react-helmet';
+
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
