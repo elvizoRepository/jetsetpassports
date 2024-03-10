@@ -2,7 +2,7 @@ import Banner from '@/Components/Banner'
 import React from 'react'
 import './policy.css'
 
-function page() {
+function Page() {
   return (
   <div>
     <Banner title='Discretion Policy for Jetset Passport Services'/>
@@ -49,4 +49,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Banner from '@/Components/Banner'
 import Title from '@/Components/Title'
 import './paymentmethod.css'
-export default function page() {
+export default function Page() {
   return (
     <div>
         <Banner title='Payment Methods'/>

@@ -3,18 +3,14 @@ import About from '@/Components/sections/About'
 import Banner from '@/Components/Banner'
 import Title from '@/Components/Title'
 import WhyUs from '@/Components/sections/WhyUs'
-export default function page() {
+export default function Page() {
     const data = [
-        { countries: ['France', 'Germany', 'Italy', 'Japan', 'Singapore', 'Spain'], locations: 194 },
+        { countries: ['France', 'Germany'], locations: 194 },
         { countries: ['Finland', 'South Korea', 'Sweden'], locations: 193 },
-        { countries: ['Austria', 'Denmark', 'Ireland', 'Netherlands'], locations: 192 },
-        { countries: ['Belgium', 'Luxembourg', 'Norway', 'Portugal', 'United Kingdom'], locations: 191 },
-        { countries: ['Greece', 'Malta', 'Switzerland'], locations: 190 },
-        { countries: ['Australia', 'Czechia', 'New Zealand', 'Poland'], locations: 189 },
-        { countries: ['Canada', 'Hungary', 'United States'], locations: 188 },
-        { countries: ['Estonia', 'Lithuania'], locations: 187 },
-        { countries: ['Latvia', 'Slovakia', 'Slovenia'], locations: 186 },
-        { countries: ['Iceland'], locations: 185 },
+        { countries: ['United Kingdom'], locations: 191 },
+        { countries: ['Poland'], locations: 189 },
+        { countries: ['Canada', 'United States'], locations: 188 },
+        { countries: ['Seychelles', 'Bahamas','Dominica','Saint Lucia', 'Russia', 'Cape-Verde', 'South Africa'], locations: null },
       ];
   return (
     <div>

@@ -5,7 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 
-export default function page() {
+export default function Page() {
   return (
     <div>
         <Banner title='Contact Us'/>
