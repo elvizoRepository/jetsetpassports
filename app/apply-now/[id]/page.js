@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { ToastContainer, toast } from 'react-toastify';
 import Modal from '@/Components/ModalComponent';
 
-export default function page({params}) {
+export default function Page({params}) {
     const [preferedPrice, setPreferedPrice] = useState(null);
     const [selectedCurrency, setSelectedCurrency] = useState('btc');
     const [copied, setCopied] = useState(false);

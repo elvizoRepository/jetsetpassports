@@ -41,7 +41,7 @@ function page() {
         </p>
         <p><span className='font-bold'>Client Communication:</span>   Updates on passport processing will be communicated securely through
         designated channels. We prioritize secure and discreet communication to maintain the confidentiality of
-        the client's engagement with Jetset Passport Services.
+        the client&apos;s engagement with Jetset Passport Services.
         </p>
     </section>
   </div>
