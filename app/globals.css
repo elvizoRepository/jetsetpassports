@@ -60,6 +60,10 @@ html{
   html{
     font-size: 19px;
   }
+  .stages{
+    flex-direction: column;
+    
+  }
 }
 @media (max-width:425px) {
   html{
@@ -68,4 +72,10 @@ html{
 }
 .underline-text{
   text-decoration: underline;
+}
+
+.loader{
+  display: "block";
+  margin: "0 auto";
+  border-color: "red";
 }

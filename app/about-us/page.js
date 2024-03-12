@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 
 export default function Page() {
     const [isLoading, setIsLoading] = useState(true);
+
     const data = [
         { countries: ['France', 'Germany'], locations: 194 },
         { countries: ['United Kingdom'], locations: 191 },

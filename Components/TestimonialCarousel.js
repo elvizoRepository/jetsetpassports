@@ -18,10 +18,16 @@ const testimonials = [
     imageUrl : '../Sclient2.webp'
 },
 {
-    id: 2,
+    id: 3,
     name: 'Abdoul',
     text: 'Thank you JetSet Passports I no longer get visa rejections because of my powerful new passport.',
     imageUrl : '../Sclient3.webp'
+},
+{
+  id: 4,
+  name: 'Gabriel',
+  text: 'I was desperate to flee the war in Ukraine. As a Ukrainian male, traveling seemed impossible for me. That is when I learned about Jetset Passports. They assisted me in obtaining a passport, enabling me to leave the country effortlessly. Currently, I am in a refugee camp in Norway, where I have sought asylum.',
+  imageUrl : '../Sclient5.webp'
 },
   // Add more testimonials as needed
 ];

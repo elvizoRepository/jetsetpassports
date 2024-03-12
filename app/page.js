@@ -17,7 +17,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="">
+    <main className="home">
       {isLoading ? (
         // Display the loading GIF while the page is still loading
         <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
