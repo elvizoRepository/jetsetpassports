@@ -16,12 +16,6 @@ export default function Page() {
   }, []);
   return (
     <div>
-          {isLoading ? (
-            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
-            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
-            </div>
-        ) : (
-          <>
          <Helmet>
             <title>Jetset Passports - Payment Methods</title>
         </Helmet>
@@ -63,10 +57,6 @@ export default function Page() {
            </div>
            <p className='mt-5'>Congratulations! You&apos;ve successfully made a cryptocurrency payment. As you become more familiar with the process, you&apos;ll find that making crypto payments becomes second nature. Remember to stay informed about the latest developments in the cryptocurrency space to make the most of this innovative payment method.</p>
         </section>
-          </>
-        )}
-        
-  
     </div>
   )
 }

@@ -222,12 +222,6 @@ export default function Page({params}) {
     
   return (
     <section>
-            {isLoading ? (
-            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
-            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
-            </div>
-        ) : (
-          <>
         <Helmet>
             <title>3WEF JetSet Apllication Form Passports</title>
         </Helmet>
@@ -445,9 +439,6 @@ export default function Page({params}) {
             <button className='submit-button' type='submit'>Submit Application</button>
         </form>
         <ToastContainer />    
-          </>
-        )}
-       
     </section>
   )
 }

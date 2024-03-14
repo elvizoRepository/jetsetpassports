@@ -14,12 +14,6 @@ function Page() {
   }, []);
   return (
   <div>
-    {isLoading ? (
-            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
-            <img src='../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
-            </div>
-        ) : (
-          <>
          <Helmet>
             <title>Jetset Passports - Policy</title>
         </Helmet>           
@@ -62,9 +56,6 @@ function Page() {
                 the client&apos;s engagement with Jetset Passport Services.
                 </p>
             </section>
-          </>
-        )}
-
   </div>
 
   )

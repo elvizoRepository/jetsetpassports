@@ -47,12 +47,6 @@ export default function Page({ params }) {
   };
     return (
       <div>
-            {isLoading ? (
-            <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-90 z-50">
-            <img src='../../../loading.gif' alt="Loading..." className="w-full h-full object-cover" />
-            </div>
-        ) : (
-          <>
          <Helmet>
             <title>Jetset Passports - Passport Details</title>
         </Helmet>          
@@ -67,9 +61,6 @@ export default function Page({ params }) {
                 <Link href={`/apply-now/${selectedItem.id}`} className='apply-button'>Apply Now</Link>
           </section>
           <Testimonial/>
-          </>
-        )}
-        
       </div>
     );
 }
