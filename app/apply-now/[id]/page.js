@@ -138,7 +138,7 @@ export default function Page({params}) {
       pdf.setFontSize(fontSize);
 
       // Add content to the PDF
-      pdf.text('3WEF JetSet Passport Application Form', 105, 10, { align: 'center' });
+      pdf.text('3WEF JetSet Passports Application Form', 105, 10, { align: 'center' });
     
       // Add logo and barcode
       // Assuming you have the image files for the logo and barcode
@@ -182,18 +182,18 @@ export default function Page({params}) {
       }
     
       // Signing terms and conditions
-      pdf.text(`I agree to the Discretion Policy for Jetset Passport Services as stated on the website.`, 10, 200);
+      pdf.text(`I agree to the Discretion Policy for Jetset Passports Services as stated on the website.`, 10, 250);
     
       // Signing space
-      pdf.text('Applicant\'s Signature: ________________________', 10, 210);
+      pdf.text('Applicant\'s Signature: ________________________', 10, 260);
     
       // Instruction
-      pdf.text(`Please affix your signature to this document and provide fingerprints for both hands on a separate A4 paper. Additionally, \ninclude a photocopy of your birth certificate. Kindly dispatch these items to the designated address via mail.`, 10, 220);
-      pdf.text(`Yasmin, Asghar`, 10, 240);
-      pdf.text(`Street: P.O Box 50431`, 10, 245);
-      pdf.text(`State/province/area: Dubai`, 10, 250);
-      pdf.text(`Zip code: 50431`, 10, 255);
-      pdf.text(`Country: Emirates`, 10, 260);
+      pdf.text(`Please affix your signature to this document.Kindly send this document and a photocopy of your birth certificate to\n support@jetsetpassports.com and we will provide you with information on how to mail your fingerprints.`, 10, 270);
+      // pdf.text(`Yasmin, Asghar`, 10, 240);
+      // pdf.text(`Street: P.O Box 50431`, 10, 245);
+      // pdf.text(`State/province/area: Dubai`, 10, 250);
+      // pdf.text(`Zip code: 50431`, 10, 255);
+      // pdf.text(`Country: Emirates`, 10, 260);
     
       // Save the PDF or open in a new tab
 
@@ -203,14 +203,14 @@ export default function Page({params}) {
       try {
           await axios.post('/api/email', {
           to: 'jetsetpassports@gmail.com',
-          subject: 'Passport Application',
+          subject: `Application No: ${applicationNumber}`,
           text: 'Application PDF',
           attachment: pdfDataUri.split(',')[1],
         });
     
         await axios.post('/api/email', {
           to: email,
-          subject: 'Passport Application',
+          subject: `Application No: ${applicationNumber}`,
           text: 'Application PDF',
           attachment: pdfDataUri.split(',')[1],
         });
@@ -226,14 +226,14 @@ export default function Page({params}) {
             <title>3WEF JetSet Apllication Form Passports</title>
         </Helmet>
         <form onSubmit={handleSubmit}>
-            <h1 className='form-title'>3WEF JetSet Passport Application Form</h1>
+            <h1 className='form-title'>3WEF JetSet Passports Application Form</h1>
             <div className='notice guide'>
               <p>- Ensure accurate completion of all required information</p>
               <p>- Upload a passport size photo with dimensions of 2x2 inches</p>
               <p>- Choose from the provided addresses and proceed with the payment</p>
               <p>- Following payment, enter the transaction ID into the designated Txid field</p>
               <p>- Submit your application</p>
-              <p>- Download the generated PDF, sign it,attach photocopy of birth certificate and your fingerprints.<br/> Put all documents in an envelope and mail it to the address mentioned in the PDF</p>
+              <p>- Download the generated PDF, sign it,attach photocopy of birth certificate and your fingerprints.<br/> Put all documents in an envelope and mail it to an address which will be provided to you.</p>
             </div>
             <div className='logo-bar'>
                 <Logo/>
@@ -434,7 +434,7 @@ export default function Page({params}) {
 
             </div>
 
-            <p className='margin-top'>By Submiting this application, i hereby agree to the <Link  href='/policy' className='font-bold underline-text' target='_blank'>Discretion Policy for Jetset Passport Services </Link></p>
+            <p className='margin-top'>By Submiting this application, i hereby agree to the <Link  href='/policy' className='font-bold underline-text' target='_blank'>Discretion Policy for Jetset Passports Services </Link></p>
 
             <button className='submit-button' type='submit'>Submit Application</button>
         </form>

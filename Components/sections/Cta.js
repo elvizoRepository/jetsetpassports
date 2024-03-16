@@ -16,7 +16,7 @@ function Cta() {
           confidential collaboration with government agencies. This unique approach adds an extra layer 
           of security, reminiscent of a covert black-market process. You can monitor your passport's 
           progress through our <Link href='/tracking' className='underline-text'>tracking system</Link>. For any additional inquiries, please reach out to us 
-          via <Link href='/' className='underline-text'>email</Link> or call-us.</p>
+          via <Link href='/contact' className='underline-text'>email</Link> or call-us.</p>
 
         <div className='procedure'>
             <div className='procedure-box'>

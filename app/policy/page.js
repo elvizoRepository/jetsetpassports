@@ -17,9 +17,9 @@ function Page() {
          <Helmet>
             <title>Jetset Passports - Policy</title>
         </Helmet>           
-            <Banner title='Discretion Policy for Jetset Passport Services'/>
+            <Banner title='Discretion Policy for Jetset Passports Services'/>
             <section className='policy'>
-                <p>At Jetset Passport Services, we hold confidentiality and discretion as paramount values in our
+                <p>At Jetset Passports Services, we hold confidentiality and discretion as paramount values in our
                 commitment to providing exceptional service. Our Discretion Policy outlines our dedication to
                 safeguarding the privacy and trust of our clients throughout the passport acquisition process.
                 </p>
@@ -39,7 +39,7 @@ function Page() {
                 necessary, we ensure that such interactions adhere to the highest standards of discretion. Our
                 agreements with external entities prioritize the protection of client information.
                 </p>
-                <p><span className='font-bold'>Client Identity Protection:</span>  Jetset Passport Services is committed to protecting the identity of our clients.
+                <p><span className='font-bold'>Client Identity Protection:</span>  Jetset Passports Services is committed to protecting the identity of our clients.
                 We take proactive measures to prevent the disclosure of client names or any identifiable information that
                 could compromise their privacy.
                 </p>
@@ -53,7 +53,7 @@ function Page() {
                 </p>
                 <p><span className='font-bold'>Client Communication:</span>   Updates on passport processing will be communicated securely through
                 designated channels. We prioritize secure and discreet communication to maintain the confidentiality of
-                the client&apos;s engagement with Jetset Passport Services.
+                the client&apos;s engagement with Jetset Passports Services.
                 </p>
             </section>
   </div>

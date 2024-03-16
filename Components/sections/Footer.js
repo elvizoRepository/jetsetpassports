@@ -21,7 +21,7 @@ export default function Footer() {
             <div className='footer-left-right-links'>
                 <h3 className='MainMenu'>Contact Us</h3>
                 <nav className='footer-nav '>
-                    <p>+1 235 1233 1212</p>
+                    <p>support@jetsetpassports.com</p>
                 </nav>
             </div>
         </div>
