@@ -12,5 +12,6 @@ const countriesData = [
     { id:10,country: 'Dominican Passport', imageurl: './images/dominican.jpg', price: 3000, pocessingTime: 3, availability:'Available', link:'https://visaindex.com/country/dominica-passport-ranking/' },
     { id:11,country: 'British Passport', imageurl: './images/britain.jpg', price: 5000, pocessingTime: 6, availability:'Available', link:'https://visaindex.com/country/united-kingdom-passport-ranking/' },
     { id:12,country: 'Saint Lucia Passport', imageurl: './images/stlucia.jpg', price: 3000, pocessingTime: 3, availability:'Available', link:'https://visaindex.com/country/saint-lucia-passport-ranking/'},
+    { id:13,country: 'Algerian Passport', imageurl: './images/algeria.jpg', price: 1500, pocessingTime: 2, availability:'Available', link:'https://visaindex.com/country/algeria-passport-ranking/'},
   ];
   export default countriesData;
