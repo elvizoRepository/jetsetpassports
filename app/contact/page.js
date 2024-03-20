@@ -14,7 +14,7 @@ export default function Page() {
         <Banner title='Contact Us'/>
         <section>
             <div>
-                <p>For inquiries and more information, feel free to Email Us <span className='text-green-500'>support@jetsetpassports.com</span></p>
+                <p>For inquiries and more information, feel free to Email Us <span className='text-green-500'>support@jetsetpassports.com</span> or call us at +1 249 444 2961</p>
             </div>
         </section>
     </div>

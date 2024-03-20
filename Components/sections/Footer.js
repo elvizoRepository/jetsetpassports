@@ -22,6 +22,7 @@ export default function Footer() {
                 <h3 className='MainMenu'>Contact Us</h3>
                 <nav className='footer-nav '>
                     <p>support@jetsetpassports.com</p>
+                    <p>+1 249 444 2961</p>
                 </nav>
             </div>
         </div>
