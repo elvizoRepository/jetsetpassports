@@ -46,15 +46,18 @@ function Navbar() {
             <Link href='/about-us' className=''>About Us</Link>
             <Link href='/passports' className=''>Passports</Link>
             <Link href='/contact' className=''>Contact Us</Link>
+            <Link href='/appointment' className='apt'>Book Appointment</Link>
         </nav>
         <RiMenu4Line className='menu' onClick={OPenNav}/>
 
         <div ref={ref} className={`side-nav ${navbarOpen ? ' show-side-nav' : ''}`}>
             <IoMdClose className='menu' onClick={CloseNav}/>
+            <Logo/>
             <Link href='/' onClick={handleLinkClick}>Home</Link>
             <Link href='/about-us' onClick={handleLinkClick}>About Us</Link>
             <Link href='/passports' onClick={handleLinkClick}>Passports</Link>
             <Link href='/contact' onClick={handleLinkClick}>Contact Us</Link>
+            <Link href='/appointment' className='apt'>Book Appointment</Link>
         </div>
     </section>
   )

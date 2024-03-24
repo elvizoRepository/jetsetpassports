@@ -44,3 +44,9 @@
         display: flex;
     }
 }
+.apt{
+    border: 1px solid gray;
+    padding: 0 0.5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
