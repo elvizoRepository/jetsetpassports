@@ -3,6 +3,9 @@ form{
     padding: 4rem;
     font-size: medium;
 }
+.coin-adress{
+    overflow: scroll;
+}
 .form-title{
     font-size: 2rem;
     font-weight: bold;
@@ -73,6 +76,10 @@ form{
     padding: 1rem;
     margin: 1rem 0 1rem 0;
 }
+.scan{
+    width: 92px;
+    height: 92px;
+}
 
 @media (max-width:1024px) {
     .photo{
@@ -97,7 +104,7 @@ form{
         gap: 1rem;
     }
 }
-@media (max-width:425px){
+@media (max-width:569px){
     .first-name,.last-name{
         flex-direction: column;
     }

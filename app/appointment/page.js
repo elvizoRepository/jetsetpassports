@@ -41,11 +41,11 @@ export default function Page() {
     pdf.setFontSize(fontSize);
 
     pdf.text('Appointment Confirmation', 105, 10, { align: 'center' });
-    pdf.text(`Appointment Data: ${name}`, 10, 60);
-    pdf.text(`Appointment Time: ${selectedTime}`, 10, 70);
-    pdf.text(`Name: ${name}`, 10, 80);
-    pdf.text(`Email: ${email}`, 10, 90);
-    pdf.text(`Phone: ${phone}`, 10, 100);
+    pdf.text(`Appointment Data: ${selectedDate}`, 10, 30);
+    pdf.text(`Appointment Time: ${selectedTime}`, 10, 40);
+    pdf.text(`Name: ${name}`, 10, 50);
+    pdf.text(`Email: ${email}`, 10, 60);
+    pdf.text(`Phone: ${phone}`, 10, 70);
 
     const pdfDataUri = pdf.output('datauristring');
     pdf.save('appointment.pdf');
@@ -73,7 +73,7 @@ export default function Page() {
   return (
     <div>
       <Helmet>
-        <title>Jetset Passports - Book Appointment</title>
+        <title>Book Appointment</title>
       </Helmet>
       <Banner title="Book Appointment" />
       <section >
@@ -86,9 +86,13 @@ export default function Page() {
             <label className="label">Time:</label>
             <select value={selectedTime} onChange={handleTimeChange} className="input">
               <option value="">Select Time</option>
-              <option value="11:00 AM">11:00 AM</option>
-              <option value="2:00 PM">2:00 PM</option>
-              <option value="4:00 PM">4:00 PM</option>
+              <option value="9:00 AM - 9:45 AM">9:00 AM - 9:45 AM</option>
+              <option value="10:00 AM - 10:45 AM">10:00 AM - 10:45 AM</option>
+              <option value="11:00 AM - 11:45 AM">11:00 AM - 11:45 AM</option>
+              <option value="12:45 PM - 1:15 PM">12:45 PM - 1:15 PM</option>
+              <option value="2:00 PM - 2:45 PM">2:00 PM - 2:45 PM</option>
+              <option value="3:00 PM - 3:45 PM">3:00 PM - 3:45 PM</option>
+              <option value="4:00 PM - 4:45 PM">4:00 PM - 4:45 PM</option>
               {/* Add more options as needed */}
             </select>
           </div>

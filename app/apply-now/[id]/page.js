@@ -351,60 +351,60 @@ export default function Page({params}) {
                     <div className="payment-box">
                       <p className='textwidth'>
                         <span className="coin-adress">Bitcoin(BTC) Address:</span>
-                        16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm
-                        <CopyToClipboard text="16hm6gGa7S4UhVuDT9guLS9cLtRvPFPKAm" onCopy={handleCopy}>
+                        3QnSTMjJAdMNKubZfya1KiZLkb4xDeT6GQ
+                        <CopyToClipboard text="3QnSTMjJAdMNKubZfya1KiZLkb4xDeT6GQ" onCopy={handleCopy}>
                           <span  title="Copy to Clipboard">
                             <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/btc_vqe2iv.png" className="scan" alt="Bitcoin Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1711382332/bitcoinCam_p06uam.png" className="scan" alt="Bitcoin Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'usdtTRC20' && (
                     <div className="payment-box">
                       <p>
-                        <span className="coin-adress">USDT(TRC20) Address:</span> TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM
-                        <CopyToClipboard text="TC1sXHHCzv861KFf9eXve7UEYXQmt4hiSM" onCopy={handleCopy}>
+                        <span className="coin-adress">USDT(TRC20) Address:</span> TRqHznm6rpy5WnmVquFgpUsZLNpG1ipUqU
+                        <CopyToClipboard text="TRqHznm6rpy5WnmVquFgpUsZLNpG1ipUqU" onCopy={handleCopy}>
                           <span  title="Copy to Clipboard">
                             <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtTRC20_py2eew.png" className="scan" alt="USDT TRC20 Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1711382425/USDT_TRC20_mi6fdh.png" className="scan" alt="USDT TRC20 Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'usdtERC20' && (
                     <div className="payment-box">
                       <p>
-                        <span className="coin-adress">USDT(ERC20) Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
-                        <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
+                        <span className="coin-adress">USDT(ERC20) Address:</span> 0x390ca272ae5901b3a7d86c75fb6ded3d4b87ce7c
+                        <CopyToClipboard text="0x390ca272ae5901b3a7d86c75fb6ded3d4b87ce7c" onCopy={handleCopy}>
                           <span title="Copy to Clipboard">
                             <FaCopy className="copy-icon" />
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/usdtERC20_b9doad.png" className="scan" alt="USDT ERC20 Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1711382473/USDT_ERC20_pc1x9h.png" className="scan" alt="USDT ERC20 Logo" />
                     </div>
                   )}
 
                   {selectedCurrency === 'eth' && (
                     <div className="payment-box">
                       <p>
-                        <span className="coin-adress">ETH Address:</span> 0x054fc890b16e29bd089c61bab7cc455260cb7323
-                        <CopyToClipboard text="0x054fc890b16e29bd089c61bab7cc455260cb7323" onCopy={handleCopy}>
+                        <span className="coin-adress">ETH Address:</span> 0x390ca272ae5901b3a7d86c75fb6ded3d4b87ce7c
+                        <CopyToClipboard text="0x390ca272ae5901b3a7d86c75fb6ded3d4b87ce7c" onCopy={handleCopy}>
                           <span  title="Copy to Clipboard">
                             <FaCopy className="copy-icon"/>
                           </span>
                         </CopyToClipboard>
                       </p>
                       {copied && <span className="copied-text">Copied!</span>}
-                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1709642953/Eth_p3yqec.png" className="scan" alt="ETH Logo" />
+                      <img src="https://res.cloudinary.com/dlgxjvrwt/image/upload/v1711382539/Etherium_u6hoa3.png" className="scan" alt="ETH Logo" />
                     </div>
                   )}
                 </div>
